@@ -2,6 +2,7 @@ const DatabaseOps = require('../utils/database.helper');
 const File = new DatabaseOps('File');
 const Folder = new DatabaseOps('Folder');
 const appResponse = require('../utils/appResponse');
+const path = require('path');
 
 
 exports.searchAndFilterFiles = async (req, res) => {
@@ -61,5 +62,5 @@ exports.searchFileAndFolder = async (req, res) => {
 }
 
 exports.testSearch = async (req,res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  res.sendFile(path.join(__dirname, '/index.html'));
 }
